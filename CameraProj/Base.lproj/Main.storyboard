@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHq-vv-RCZ">
+                                <rect key="frame" x="164.66666666666666" y="754" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Rd5-eP-QXf"/>
+                                    <constraint firstAttribute="width" constant="64" id="sJx-Hk-MtA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="capture" destination="BYZ-38-t0r" eventType="touchDown" id="jDC-fK-TEN"/>
+                                    <action selector="stopCapture" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3K-L6-fab"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFj-Ug-LFY">
+                                <rect key="frame" x="325" y="770" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="5LP-qz-ixa"/>
+                                    <constraint firstAttribute="height" constant="48" id="Y8D-qy-gHu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.2.circlepath" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="switchCamera" destination="BYZ-38-t0r" eventType="touchUpInside" id="P3w-fy-Knp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RFj-Ug-LFY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CMp-5k-qQp"/>
+                            <constraint firstItem="RFj-Ug-LFY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QXM-jP-EuK"/>
+                            <constraint firstItem="tHq-vv-RCZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RBY-h5-BCY"/>
+                            <constraint firstItem="tHq-vv-RCZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VLr-ic-svI"/>
+                            <constraint firstItem="tHq-vv-RCZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hxA-QW-6dg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RFj-Ug-LFY" secondAttribute="trailing" constant="20" id="rQP-ft-TA4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="JcD-g1-Oxj" kind="presentation" identifier="player" id="qCt-pW-RxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="-738"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="7du-gg-cNn">
+            <objects>
+                <viewController id="JcD-g1-Oxj" customClass="PlayerViewController" customModule="CameraProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J4x-zG-sGG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urz-Kp-lvI">
+                                <rect key="frame" x="0.0" y="79" width="393" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="dVS-rz-fMg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvZ-lm-uec">
+                                <rect key="frame" x="141" y="349" width="111" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start / Stop"/>
+                                <connections>
+                                    <action selector="togglePlay" destination="JcD-g1-Oxj" eventType="touchUpInside" id="Vqb-OO-viV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xeP-lf-Pih"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="urz-Kp-lvI" firstAttribute="top" secondItem="xeP-lf-Pih" secondAttribute="top" constant="20" id="0zZ-Ar-vAc"/>
+                            <constraint firstItem="xeP-lf-Pih" firstAttribute="trailing" secondItem="urz-Kp-lvI" secondAttribute="trailing" id="A1q-C5-kxT"/>
+                            <constraint firstItem="YvZ-lm-uec" firstAttribute="centerX" secondItem="urz-Kp-lvI" secondAttribute="centerX" id="RHV-av-dSH"/>
+                            <constraint firstItem="YvZ-lm-uec" firstAttribute="top" secondItem="urz-Kp-lvI" secondAttribute="bottom" constant="20" id="W7I-8m-Kef"/>
+                            <constraint firstItem="urz-Kp-lvI" firstAttribute="leading" secondItem="xeP-lf-Pih" secondAttribute="leading" id="dXp-fB-Fv6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerContainer" destination="urz-Kp-lvI" id="T1E-OU-TW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPA-GR-m3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="-738"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="104"/>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
