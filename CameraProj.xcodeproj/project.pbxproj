@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		476496C0291A963E002AFE9A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476496BF291A963E002AFE9A /* PlayerViewController.swift */; };
+		476496C2291B995C002AFE9A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476496C1291B995C002AFE9A /* CollectionViewController.swift */; };
+		476496C4291BD844002AFE9A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476496C3291BD844002AFE9A /* CollectionViewCell.swift */; };
 		4765764C291A4DE90076D802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765764B291A4DE90076D802 /* AppDelegate.swift */; };
 		4765764E291A4DE90076D802 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765764D291A4DE90076D802 /* SceneDelegate.swift */; };
 		47657650291A4DE90076D802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765764F291A4DE90076D802 /* ViewController.swift */; };
@@ -15,10 +17,13 @@
 		47657655291A4DEA0076D802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47657654291A4DEA0076D802 /* Assets.xcassets */; };
 		47657658291A4DEA0076D802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47657656291A4DEA0076D802 /* LaunchScreen.storyboard */; };
 		47657660291A4E070076D802 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765765F291A4E070076D802 /* Camera.swift */; };
+		477AC6AC291D024F000F06B8 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477AC6AB291D024F000F06B8 /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		476496BF291A963E002AFE9A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		476496C1291B995C002AFE9A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		476496C3291BD844002AFE9A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		47657648291A4DE90076D802 /* CameraProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4765764B291A4DE90076D802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4765764D291A4DE90076D802 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		47657657291A4DEA0076D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47657659291A4DEA0076D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4765765F291A4E070076D802 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		477AC6AB291D024F000F06B8 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		476496C5291BFB20002AFE9A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				476496C1291B995C002AFE9A /* CollectionViewController.swift */,
+				4765764F291A4DE90076D802 /* ViewController.swift */,
+				476496BF291A963E002AFE9A /* PlayerViewController.swift */,
+				477AC6AB291D024F000F06B8 /* PhotoController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		476496C6291BFB35002AFE9A /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				4765765F291A4E070076D802 /* Camera.swift */,
+				476496C3291BD844002AFE9A /* CollectionViewCell.swift */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
 		4765763F291A4DE90076D802 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +86,10 @@
 		4765764A291A4DE90076D802 /* CameraProj */ = {
 			isa = PBXGroup;
 			children = (
+				476496C6291BFB35002AFE9A /* Instruments */,
+				476496C5291BFB20002AFE9A /* Controllers */,
 				4765764B291A4DE90076D802 /* AppDelegate.swift */,
 				4765764D291A4DE90076D802 /* SceneDelegate.swift */,
-				4765764F291A4DE90076D802 /* ViewController.swift */,
-				4765765F291A4E070076D802 /* Camera.swift */,
-				476496BF291A963E002AFE9A /* PlayerViewController.swift */,
 				47657651291A4DE90076D802 /* Main.storyboard */,
 				47657654291A4DEA0076D802 /* Assets.xcassets */,
 				47657656291A4DEA0076D802 /* LaunchScreen.storyboard */,
@@ -144,10 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476496C2291B995C002AFE9A /* CollectionViewController.swift in Sources */,
+				476496C4291BD844002AFE9A /* CollectionViewCell.swift in Sources */,
 				47657660291A4E070076D802 /* Camera.swift in Sources */,
 				47657650291A4DE90076D802 /* ViewController.swift in Sources */,
 				4765764C291A4DE90076D802 /* AppDelegate.swift in Sources */,
 				4765764E291A4DE90076D802 /* SceneDelegate.swift in Sources */,
+				477AC6AC291D024F000F06B8 /* PhotoController.swift in Sources */,
 				476496C0291A963E002AFE9A /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +327,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CameraProj/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Let me watch you";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Let me hear you";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Show me your photos xD";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -329,6 +358,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CameraProj/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Let me watch you";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Let me hear you";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Show me your photos xD";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -340,6 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.Arkhypchuk.CameraProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -39,6 +39,9 @@ final class Camera: NSObject {
     
     
     private(set) var isReady = false
+    private(set) var media: [URL] = []
+    private(set) var photos: [URL] = []
+
     
     weak var delegate: CameraDelegate?
 }
@@ -80,6 +83,7 @@ extension Camera {
         
         photoOutput.capturePhoto(with: settings, delegate: self)
         
+        
     }
     
     func startVideoRecording() {
@@ -97,6 +101,16 @@ extension Camera {
     func stopVideRecording() {
         videoOutput.stopRecording()
     }
+    
+    func addMedia(_ url: URL) {
+        media.append(url)
+    }
+    
+    func addPhoto(_ url: URL) {
+        photos.append(url)
+    }
+    
+    
 }
 
 //MARK: Private API
@@ -132,6 +146,14 @@ private extension Camera {
         if camera.isFocusModeSupported(.continuousAutoFocus) {
             camera.focusMode = .continuousAutoFocus
         }
+        guard let audioDevice = AVCaptureDevice.default(for: AVMediaType.audio) else { return }
+        do {
+            let audioInput = try AVCaptureDeviceInput(device: audioDevice)
+            self.captureSession.addInput(audioInput)
+        } catch {
+            print("Unable to add audio device to the recording.")
+        }
+        
         camera.unlockForConfiguration()
     }
     
@@ -162,6 +184,8 @@ private extension Camera {
         }
 
     }
+    
+    
 }
 
 
